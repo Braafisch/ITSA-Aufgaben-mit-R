@@ -1,0 +1,8 @@
+set.seed(150)
+w=rnorm(100)
+w=ts(w)
+par(mfrow=c(2,1))
+plot.ts(w)
+v= 1/3 * (lag(w,1)+w+lag(w,-1))
+plot.ts(v, col="red")
+acf(v, lag.max = 4)
